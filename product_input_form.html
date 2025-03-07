@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Input Produk</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #2c3e50, #4ca1af); /* Background gradasi elegan */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 450px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Formulir Input Produk</h2>
+
+        <form action="submit_produk.php" method="post" enctype="multipart/form-data">
+            <label for="nama">Nama Produk:</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="deskripsi">Deskripsi Produk:</label>
+            <textarea id="deskripsi" name="deskripsi" rows="3" required></textarea>
+
+            <label for="harga">Harga (Rp):</label>
+            <input type="number" id="harga" name="harga" min="0" required>
+
+            <label for="kategori">Kategori:</label>
+            <select id="kategori" name="kategori">
+                <option value="elektronik">Elektronik</option>
+                <option value="pakaian">Pakaian</option>
+                <option value="makanan">Makanan & Minuman</option>
+                <option value="kecantikan">Kecantikan</option>
+                <option value="lainnya">Lainnya</option>
+            </select>
+
+            <label for="gambar">Gambar Produk:</label>
+            <input type="file" id="gambar" name="gambar" accept="image/*" required>
+
+            <label for="stok">Stok Produk:</label>
+            <input type="number" id="stok" name="stok" min="0" required>
+
+            <label for="sku">SKU (Kode Produk):</label>
+            <input type="text" id="sku" name="sku" required>
+
+            <label for="berat">Berat Produk (gram):</label>
+            <input type="number" id="berat" name="berat" min="0" required>
+
+            <label for="dimensi">Dimensi Produk (P x L x T cm):</label>
+            <input type="text" id="dimensi" name="dimensi" placeholder="Contoh: 20 x 15 x 10" required>
+
+            <label for="status">Status Produk:</label>
+            <select id="status" name="status">
+                <option value="tersedia">Tersedia</option>
+                <option value="tidak tersedia">Tidak Tersedia</option>
+            </select>
+
+            <button type="submit">Simpan Produk</button>
+        </form>
+    </div>
+
+</body>
+</html>
